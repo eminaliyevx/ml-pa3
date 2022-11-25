@@ -25,8 +25,9 @@ X = X.apply(lambda rec: (rec - rec.mean()) / rec.std(), axis=0)
 p = utils.gradientDescent(X["Yurush"], X["Buraxilish ili"], Y)
 
 print(p[-1])
+print(p[-1][0] + p[-1][1] * 240000 + p[-1][2] * 2000)
 
 # 4. Linear Regression using library
-reg = linear_model.LinearRegression()
-reg.fit(df[["Yurush", "Buraxilish ili"]], df["Qiymet"])
-print(reg.coef_)
+# reg = linear_model.LinearRegression()
+# reg.fit(df[["Yurush", "Buraxilish ili"]], df["Qiymet"])
+# print(reg.coef_)
