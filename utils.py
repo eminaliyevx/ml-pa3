@@ -32,13 +32,9 @@ def gradientDescent(x, y, weights, alpha=0.001, iterations=10000):
     costList = []
 
     for i in range(iterations):
-        prediction = np.dot(x, weights)
-        error = prediction - y
-        cost = 1 / (2 * n) * np.dot(error.T, error)
-        derivative = (1 / n) * alpha * np.dot(x.T, error)
-        weights = weights - derivative
+        gradient = x.T.dot(x.dot(weights) - y)
+        weights = weights - (1 / n) * alpha * gradient
 
         weightList.append(weights)
-        costList.append(cost)
 
     return weightList, costList
