@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 
 
 # 2. Visualization
-def plot(df):
+def plot_data(df):
     # Qiymet (Y) vs Yurush (X1)
     df.plot(kind="scatter", x="Yurush", y="Qiymet")
     plt.show()
@@ -17,4 +17,12 @@ def plot(df):
     ax.set_ylabel("Buraxilish ili")
     ax.set_zlabel("Qiymet")
     ax.scatter3D(df["Yurush"], df["Buraxilish ili"], df["Qiymet"])
+    plt.show()
+
+# Plot graph of cost function
+def plot_cost_function(costs):
+    plt.title("Cost function")
+    plt.xlabel("Number of iterations")
+    plt.ylabel("Cost")
+    plt.plot(costs)
     plt.show()
